@@ -7,7 +7,7 @@ import { Agenda } from 'app/models/Agenda';
 })
 export class AgendaService {
 
-  BASE_URL = 'http://localhost:3000'
+  BASE_URL = 'https://back-end-softwareteam.onrender.com'
 
   constructor(private http: HttpClient) { }
 
