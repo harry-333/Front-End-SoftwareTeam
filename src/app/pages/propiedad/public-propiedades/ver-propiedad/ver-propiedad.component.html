@@ -1,0 +1,43 @@
+<div class="wrapper wrapper-full-page">
+    <div class="page-header register-page header-filter" filter-color="black"
+        style="background-image: url('./assets/img/header-doc.jpg'); background-size: cover; background-position: top center;">
+        <div class="container">
+            <div class="row" style="padding-top: 11rem; padding-bottom: 11rem;">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">{{ propiedad.titulo }}</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="property-details">
+                                <p><strong>Ciudad:</strong> {{ propiedad.ciudad }}</p>
+                                <p><strong>Dirección:</strong> {{ propiedad.direccion }}</p>
+                                <p><strong>Precio:</strong> ${{ propiedad.precio }}</p>
+                                <p><strong>Habitaciones:</strong> {{ propiedad.No_habitaciones }}</p>
+                                <p><strong>Baños:</strong> {{ propiedad.No_banos }}</p>
+                                <p><strong>Área Construida:</strong> {{ propiedad.area_construida }} m²</p>
+                                <p><strong>Descripción:</strong> {{ propiedad.desc_prop }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Vendedor</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="seller-details">
+                                <p><strong>Nombre:</strong> {{ propiedad.nombre_vendedor }} {{
+                                    propiedad.apellido_vendedor
+                                    }}</p>
+                                <p><strong>Correo:</strong> {{ propiedad.email_vendedor }}</p>
+                                <p><strong>Teléfono:</strong> {{ propiedad.telefono }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

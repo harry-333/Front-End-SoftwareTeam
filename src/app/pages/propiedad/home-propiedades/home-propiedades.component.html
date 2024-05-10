@@ -1,0 +1,61 @@
+<div class="wrapper wrapper-full-page">
+    <div class="page-header register-page header-filter" filter-color="black"
+        style="background-image: url('./assets/img/header-doc.jpg'); background-size: cover; background-position: top center;">
+        <div class="container">
+            <div class="row" style="padding-top: 11rem; padding-bottom: 11rem;">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">dashboard</i>
+                            </div>
+                            <h4 class="card-title">Lista de Inmobiliarias</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="material-datatables">
+                                <table datatable [dtOptions]="dtOptions"
+                                    class="table table-striped table-no-bordered table-hover" cellspacing="0"
+                                    width="100%" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Propiedad</th>
+                                            <th>Título</th>
+                                            <th>Ciudad</th>
+                                            <th>Dirección</th>
+                                            <th>Precio</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID Propiedad</th>
+                                            <th>Título</th>
+                                            <th>Ciudad</th>
+                                            <th>Dirección</th>
+                                            <th>Precio</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr *ngFor="let propiedad of propiedades">
+                                            <td>{{ propiedad.id_propiedad }}</td>
+                                            <td>{{ propiedad.titulo }}</td>
+                                            <td>{{ propiedad.ciudad }}</td>
+                                            <td>{{ propiedad.direccion }}</td>
+                                            <td>{{ propiedad.precio }}</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- end content-->
+                    </div>
+                    <!--  end card  -->
+                </div>
+                <!-- end col-md-12 -->
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+
+</div>

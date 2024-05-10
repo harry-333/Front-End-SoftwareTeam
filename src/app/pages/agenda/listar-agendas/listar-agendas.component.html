@@ -1,0 +1,47 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">event</i>
+                        </div>
+                        <h4 class="card-title">Agendas</h4>
+                        <a [routerLink]="['/agenda/add']" class="btn btn-primary" style="float: right">
+                            <i class="material-icons">add</i>
+                            Agregar Agenda
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                    <tr>
+                                        <th>ID Propiedad</th>
+                                        <th>Fecha y Hora</th>
+                                        <th>Comentarios</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let agenda of agendas">
+                                        <td>{{ agenda.id_propiedad }}</td>
+                                        <td>{{ agenda.fecha_hora }}</td>
+                                        <td>{{ agenda.comentarios }}</td>
+                                        <td>
+                                            <a [routerLink]="['/agenda/edit/', agenda.id_agenda]"
+                                                class="btn btn-link btn-info btn-just-icon like">
+                                                <i class="material-icons">edit</i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

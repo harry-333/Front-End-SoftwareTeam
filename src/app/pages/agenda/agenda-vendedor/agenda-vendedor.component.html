@@ -1,0 +1,50 @@
+<div class="wrapper wrapper-full-page">
+    <div class="page-header register-page header-filter" filter-color="black"
+        style="background-image: url('./assets/img/fondoAgenda.jpg'); background-size: cover; background-position: top center;">
+        <div class="container">
+            <div class="row" style="padding-bottom: 11rem; padding-top: 11rem;">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">event</i>
+                            </div>
+                            <h4 class="card-title">Agendas</h4>
+                            <a [routerLink]="['/user/mi-agenda/add']" class="btn btn-primary" style="float: right">
+                                <i class="material-icons">add</i>
+                                Agregar Agenda
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="text-primary">
+                                        <tr>
+                                            <th>ID Propiedad</th>
+                                            <th>Fecha y Hora</th>
+                                            <th>Comentarios</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let agenda of agendas">
+                                            <td>{{ agenda.id_propiedad }}</td>
+                                            <td>{{ agenda.fecha_hora }}</td>
+                                            <td>{{ agenda.comentarios }}</td>
+                                            <td>
+                                                <a [routerLink]="['/user/mi-agenda/edit/', agenda.id_agenda]"
+                                                    class="btn btn-link btn-info btn-just-icon like">
+                                                    <i class="material-icons">edit</i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

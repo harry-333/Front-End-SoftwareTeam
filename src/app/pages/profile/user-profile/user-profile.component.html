@@ -1,0 +1,129 @@
+<div class="wrapper wrapper-full-page">
+    <div class="page-header register-page header-filter" filter-color="black"
+        style="background-image: url('./assets/img/card-2.jpg'); background-size: cover; background-position: top center;">
+        <div class="container">
+            <div class="row justify-content-center" style="padding-top: 9rem; padding-bottom: 9rem;">
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header card-header-icon card-header-rose">
+                            <div class="card-icon">
+                                <i class="material-icons">perm_identity</i>
+                            </div>
+                            <h4 class="card-title">Mi perfil -
+                                <small class="category">Editar información</small>
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-2">
+                                <!-- Formulario para la información básica -->
+                                <form (ngSubmit)="guardarInformacionBasica()" #formInfoBasica="ngForm">
+                                    <div class="row">
+                                        <!-- Primera fila -->
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Nombre</label>
+                                                <input type="text" class="form-control" [(ngModel)]="datosPerfil.nombre"
+                                                    name="nombre" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Apellido</label>
+                                                <input type="text" class="form-control"
+                                                    [(ngModel)]="datosPerfil.apellido" name="apellido" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Correo electrónico</label>
+                                                <input type="email" class="form-control"
+                                                    [(ngModel)]="datosPerfil.correo" name="correo" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <!-- Segunda fila -->
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Teléfono</label>
+                                                <input type="text" class="form-control"
+                                                    [(ngModel)]="datosPerfil.telefono" name="telefono" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Documento</label>
+                                                <input type="text" class="form-control"
+                                                    [(ngModel)]="datosPerfil.documento" name="documento" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <label class="bmd-label-floating">Tipo de documento</label>
+                                                <mat-select id="tipo_documento" name="tipo_documento"
+                                                    [(ngModel)]="datosPerfil.tipo_documento" required>
+                                                    <mat-option value="CC">CC</mat-option>
+                                                    <mat-option value="TI">TI</mat-option>
+                                                    <mat-option value="DNI">DNI</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <!-- Tercera fila -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Descripción</label>
+                                                <textarea class="form-control" [(ngModel)]="datosPerfil.descripcion"
+                                                    name="descripcion" rows="4"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button mat-raised-button type="submit" class="btn btn-rose pull-right">Actualizar
+                                        Información
+                                        Básica</button>
+                                </form>
+                            </div>
+
+                            <div class="mt-5">
+                                <!-- Formulario para la contraseña -->
+                                <form (ngSubmit)="guardarContrasena()" #formContrasena="ngForm">
+                                    <!-- Campos para la contraseña -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Nueva Contraseña</label>
+                                                <input type="password" class="form-control"
+                                                    [(ngModel)]="contrasenas.nueva" name="nuevaContrasena" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Campo para confirmar la nueva contraseña -->
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">Confirmar Nueva Contraseña</label>
+                                                <input type="password" class="form-control"
+                                                    [(ngModel)]="contrasenas.confirmar" name="confirmarContrasena"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Botón para actualizar contraseña -->
+                                    <button mat-raised-button type="submit" class="btn btn-rose pull-right">Actualizar
+                                        Contraseña</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

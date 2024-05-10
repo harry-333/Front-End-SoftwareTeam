@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Verificar Código de Autenticación</h2>
+<div mat-dialog-content>
+  <p>Por favor, ingresa el código de autenticación de dos pasos:</p>
+  <mat-form-field>
+    <input matInput placeholder="Código de Autenticación" [(ngModel)]="codigoAutenticacion">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-button color="primary" (click)="confirmar()">Confirmar</button>
+</div>

@@ -1,0 +1,21 @@
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Ajusta el ancho según tus necesidades */
+    margin: 0 auto; /* Centra el modal horizontalmente */
+    text-align: center; /* Centra el contenido dentro del modal */
+}
+
+
+/* Estilo para el título del modal */
+.modal-content h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los campos de formulario */
+.form-group {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,30 @@
+<!-- usuarios-modal.component.html -->
+<h2>Seleccionar Usuario</h2>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Column definitions here... -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let usuario">{{ usuario.id }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+    <mat-cell *matCellDef="let usuario">{{ usuario.nombre }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="apellido">
+    <mat-header-cell *matHeaderCellDef>Apellido</mat-header-cell>
+    <mat-cell *matCellDef="let usuario">{{ usuario.apellido }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="accion">
+    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-icon-button (click)="seleccionarUsuario($event, row)">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<button mat-button (click)="cerrarModal()">Cerrar</button>

@@ -1,0 +1,38 @@
+<!-- propiedads-modal.component.html -->
+<h2>Mis propiedades</h2>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Column definitions here... -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let propiedad">{{ propiedad.id_propiedad }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="titulo">
+    <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+    <mat-cell *matCellDef="let propiedad">{{ propiedad.titulo }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="ciudad">
+    <mat-header-cell *matHeaderCellDef>Ciudad</mat-header-cell>
+    <mat-cell *matCellDef="let propiedad">{{ propiedad.ciudad }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="direccion">
+    <mat-header-cell *matHeaderCellDef>Direccion</mat-header-cell>
+    <mat-cell *matCellDef="let propiedad">{{ propiedad.direccion }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="precio">
+    <mat-header-cell *matHeaderCellDef>Precio</mat-header-cell>
+    <mat-cell *matCellDef="let propiedad">{{ propiedad.precio }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="accion">
+    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-icon-button (click)="seleccionarPropiedad($event, row)">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<button mat-button (click)="cerrarModal()">Cerrar</button>

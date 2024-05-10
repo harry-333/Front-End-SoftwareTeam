@@ -1,0 +1,42 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">apartments</i>
+                        </div>
+                        <h4 class="card-title">Tipos de Propiedad</h4>
+                        <button mat-raised-button class="btn btn-primary" (click)="openTipoPropiedadModal()" style="float: right">
+                            <i class="material-icons">add</i>
+                            Agregar Tipo de Propiedad
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Descripción</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let tipoPropiedad of tiposPropiedad">
+                                        <td>{{ tipoPropiedad.id_tipoProp }}</td>
+                                        <td>{{ tipoPropiedad.desc_tipoProp }}</td>
+                                        <td>
+                                            <button (click)="editarTipoPropiedad(tipoPropiedad)" class="btn btn-sm btn-primary">Editar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

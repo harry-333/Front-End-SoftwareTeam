@@ -1,0 +1,90 @@
+<div class="wrapper wrapper-full-page">
+  <div class="page-header register-page header-filter" filter-color="black"
+    style="background-image: url('./assets/img/register.jpg'); background-size: cover; background-position: top center;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="card card-signup">
+            <div class="card-header card-header-primary card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">person_add</i>
+              </div>
+              <h4 class="card-title">Registrate</h4>
+            </div>
+            <div class="card-body">
+              <form #usuarioForm="ngForm" (ngSubmit)="registrarUsuario()">
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput id="nombre" name="nombre" placeholder="Nombre" [(ngModel)]="usuario.nombre"
+                        required>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput id="apellido" name="apellido" placeholder="Apellido"
+                        [(ngModel)]="usuario.apellido" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput id="correo" name="correo" placeholder="Correo" [(ngModel)]="usuario.correo"
+                        required>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput id="documento" name="documento" placeholder="Documento"
+                        [(ngModel)]="usuario.documento" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Tipo de documento</mat-label>
+                      <mat-select id="tipo_documento" name="tipo_documento" [(ngModel)]="usuario.tipo_documento"
+                        required>
+                        <mat-option value="2">CC</mat-option>
+                        <mat-option value="1">DNI</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput id="telefono" name="telefono" placeholder="Teléfono"
+                        [(ngModel)]="usuario.telefono" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                      <textarea matInput id="descripcion" name="descripcion" placeholder="Descripción"
+                        [(ngModel)]="usuario.descripcion" required></textarea>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <mat-form-field class="example-full-width">
+                      <input matInput type="password" id="password" name="contrasena" placeholder="Contraseña"
+                        [(ngModel)]="usuario.contrasena" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary"
+                    [disabled]="!usuarioForm.form.valid || registrando">Registrarse</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

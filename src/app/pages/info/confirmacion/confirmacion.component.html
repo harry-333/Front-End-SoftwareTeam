@@ -1,0 +1,33 @@
+<div class="wrapper wrapper-full-page">
+    <div class="page-header register-page header-filter" filter-color="black"
+      style="background-image: url('./assets/img/fondoInfo.jpg'); background-size: cover; background-position: top center;">
+      <div class="container">
+        <div class="row justify-content-center" style="padding-top: 12rem; padding-bottom: 13rem">
+          <div class="col-lg-7 col-md-10">
+            <!-- Card -->
+            <div class="card">
+              <div class="card-header card-header-primary text-center">
+                <h3 class="card-title">Reestablecer Contraseña</h3>
+              </div>
+              <div class="card-body">
+                <div *ngIf="correoEnviado">
+                  <p class="description text-center big-text">
+                    Se ha enviado un mensaje de correo electrónico a
+                    <span style="color: purple;">{{ correoEnviado }}</span>
+                    con instrucciones para restablecer tu contraseña. Por favor, verifica tu bandeja de entrada.
+                  </p>
+                </div>
+                <div *ngIf="!correoEnviado">
+                  <p class="description text-center big-text">
+                    Hubo un error al procesar tu solicitud. Por favor, intenta nuevamente o contacta al soporte.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Fin de la tarjeta -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

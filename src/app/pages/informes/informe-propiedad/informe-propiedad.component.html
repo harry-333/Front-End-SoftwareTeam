@@ -1,0 +1,83 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">description</i>
+                        </div>
+                        <h4 class="card-title">Informe de Propiedades</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Propiedad</mat-label>
+                                    <mat-select [(ngModel)]="selectedPropiedad" name="selectedPropiedad">
+                                        <mat-option *ngFor="let propiedad of informe" [value]="propiedad.id_propiedad">
+                                            {{ propiedad.titulo }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Fecha de Inicio</mat-label>
+                                    <input matInput [matDatepicker]="picker1" [(ngModel)]="fechaInicial" name="fechaInicial">
+                                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Fecha de Fin</mat-label>
+                                    <input matInput [matDatepicker]="picker2" [(ngModel)]="fechaFinal" name="fechaFinal">
+                                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker2></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary" (click)="loadInforme()">Generar Informe</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                    <th>Código propiedad</th>
+                                    <th>Tipo de negocio</th>
+                                    <th>Título</th>
+                                    <th>Ciudad</th>
+                                    <th>Dirección</th>
+                                    <th>Precio</th>
+                                    <th>Nº Habitaciones</th>
+                                    <th>Nº Baños</th>
+                                    <th>Descripción</th>
+                                    <th>Tipo de propiedad</th>
+                                    <th>Área construida</th>
+                                    <th>Fecha y Hora</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let propiedad of informe">
+                                        <td>{{ propiedad.id_propiedad }}</td>
+                                        <td>{{ propiedad.desc_Neg }}</td>
+                                        <td>{{ propiedad.titulo }}</td>
+                                        <td>{{ propiedad.ciudad }}</td>
+                                        <td>{{ propiedad.direccion }}</td>
+                                        <td>{{ propiedad.precio }}</td>
+                                        <td>{{ propiedad.No_habitaciones }}</td>
+                                        <td>{{ propiedad.No_banos }}</td>
+                                        <td>{{ propiedad.desc_Prop }}</td>
+                                        <td>{{ propiedad.desc_tipoProp }}</td>
+                                        <td>{{ propiedad.area_construida }}</td>
+                                        <td>{{ propiedad.fecha_hora }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

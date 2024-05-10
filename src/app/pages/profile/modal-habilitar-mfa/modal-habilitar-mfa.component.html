@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Habilitar Autenticación de 2 Pasos</h2>
+<div class="" mat-dialog-content>
+  <p>Escanea el código QR con tu aplicación de autenticación de dos factores:</p>
+  <div class="d-flex justify-content-center">
+    <ngx-qrcode [elementType]="'img'" [value]="codigoQRUrl" width="400px"></ngx-qrcode>
+  </div>
+  <p class="text-center">Ingresa el código de verificación generado por tu aplicación:</p>
+  <mat-form-field>
+    <input matInput placeholder="Código de Verificación" [(ngModel)]="codigoVerificacion">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-button color="primary" (click)="confirmar()">Confirmar</button>
+</div>

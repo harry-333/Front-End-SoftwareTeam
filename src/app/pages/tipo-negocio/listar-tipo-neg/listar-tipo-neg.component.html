@@ -1,0 +1,43 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">business</i>
+                        </div>
+                        <h4 class="card-title">Tipos de Negocio</h4>
+                        <button mat-raised-button class="btn btn-primary" (click)="openTipoNegocioModal()" style="float: right">
+                            <i class="material-icons">add</i>
+                            Agregar Tipo de Negocio
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Descripción</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let tipoNegocio of tiposNegocio">
+                                        <td>{{ tipoNegocio.id_tipoNeg }}</td>
+                                        <td>{{ tipoNegocio.desc_Neg }}</td>
+                                        <td>
+                                            <!-- Agrega botones para editar y eliminar -->
+                                            <button (click)="editarTipoNegocio(tipoNegocio)" class="btn btn-sm btn-primary">Editar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

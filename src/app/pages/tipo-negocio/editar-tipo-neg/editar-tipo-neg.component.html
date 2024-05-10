@@ -1,0 +1,16 @@
+<div class="modal-content">
+    <h4>{{ modalTitle }}</h4>
+    <form (ngSubmit)="guardarTipoNegocio()" #tipoNegocioForm="ngForm">
+        <div class="form-group">
+            <mat-form-field class="example-full-width">
+                <input matInput id="descNeg" name="descNeg" placeholder="Descripción del negocio"
+                    [(ngModel)]="tipoNegocio.desc_Neg" required>
+            </mat-form-field>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-info btn-sm" (click)="cerrarModal()">Cancelar</button>
+            <button type="submit" class="btn btn-primary btn-sm">{{ modalAction }}</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+.container {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+body {
+    background-image: url('../../../../assets/img/fondo.jpeg');
+    /* Reemplaza 'tu-imagen-de-fondo.jpg' con la ruta correcta de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
