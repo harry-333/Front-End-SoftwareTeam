@@ -13,7 +13,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { DataTablesModule } from 'angular-datatables';
 import { PublicComponent } from '../../pages/home/public/public.component';
 import { ResetPasswordComponent } from '../../pages/reset-password/reset-password.component';
 import { ChangePasswordComponent } from '../../pages/reset-password/change-password/change-password.component';
@@ -45,7 +44,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTooltipModule,
     MatInputModule,
     MatButtonModule,
-    DataTablesModule,
     MatSnackBarModule,
     MatDialogModule,
   ]

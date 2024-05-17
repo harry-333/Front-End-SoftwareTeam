@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DataTablesModule } from 'angular-datatables';
-
 import { UserLayoutRoutingModule } from './user-layout-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -52,7 +50,6 @@ import { UserProfileComponent } from '../../pages/profile/user-profile/user-prof
     MatTooltipModule,
     MatInputModule,
     MatButtonModule,
-    DataTablesModule,
     FormsModule,
     HttpClientModule,
     MatDatepickerModule,

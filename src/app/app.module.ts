@@ -11,7 +11,6 @@ import { UserLayoutComponent } from './layouts/user-layout/user-layout.component
 import { PublicLayoutComponent } from './layouts/public-layout/public-layout.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { TokenInterceptorService } from './services/token-interceptor.service';
-import { DataTablesModule } from 'angular-datatables';
 import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule  } from '@angular/material/select';
 import { MatDialogModule} from '@angular/material/dialog';
@@ -31,7 +30,6 @@ import { BrowserModule } from '@angular/platform-browser';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    DataTablesModule,
     MatInputModule,
     MatSelectModule,
     //MatDatepickerModule,

@@ -11,7 +11,7 @@ import { PropiedadService } from 'app/services/propiedad.service';
 export class MisPropiedadesComponent implements OnInit {
 
   propiedades: Propiedad[] = [];
-  dtOptions: DataTables.Settings = {};
+  
 
   usuarioId: number | null;
 
@@ -30,11 +30,7 @@ export class MisPropiedadesComponent implements OnInit {
     });
 
     
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      processing: true
-    };
+    
   }
 
 }

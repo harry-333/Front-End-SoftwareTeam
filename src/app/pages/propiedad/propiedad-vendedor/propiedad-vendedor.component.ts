@@ -11,7 +11,7 @@ import { PropiedadService } from './../../../services/propiedad.service';
 export class PropiedadVendedorComponent implements OnInit {
 
   propiedades: Propiedad[] = [];
-  dtOptions: DataTables.Settings = {};
+  
 
   usuarioId: number | null;
 
@@ -32,11 +32,7 @@ export class PropiedadVendedorComponent implements OnInit {
       });
   
       
-      this.dtOptions = {
-        pagingType: 'full_numbers',
-        pageLength: 5,
-        processing: true
-      };
+      
     }
 
 }

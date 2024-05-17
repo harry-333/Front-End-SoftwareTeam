@@ -20,7 +20,6 @@ import { ListarUsuarioComponent } from '../../pages/usuario/listar-usuario/lista
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { HomeComponent } from '../../pages/home/home.component';
 import { EditarUsuarioComponent } from '../../pages/usuario/editar-usuario/editar-usuario.component';
-import { DataTablesModule } from 'angular-datatables';
 import { ListarTipoNegComponent } from '../../pages/tipo-negocio/listar-tipo-neg/listar-tipo-neg.component';
 import { EditarTipoNegComponent } from '../../pages/tipo-negocio/editar-tipo-neg/editar-tipo-neg.component';
 import { ListarTipoPropComponent } from '../../pages/tipo-propiedad/listar-tipo-prop/listar-tipo-prop.component';
@@ -56,7 +55,6 @@ import { ModalHabilitarMfaComponent } from 'app/pages/profile/modal-habilitar-mf
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    DataTablesModule, 
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,

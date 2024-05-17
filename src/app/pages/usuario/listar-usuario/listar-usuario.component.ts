@@ -13,7 +13,7 @@ declare const $: any;
 export class ListarUsuarioComponent implements OnInit {
 
   usuarios: Usuario[] = [];
-  dtOptions: DataTables.Settings = {};
+  
 
   constructor(private usuarioService: UsuarioService) { 
     this.usuarioService.getUsuarios().subscribe((data: Usuario[]) => {
@@ -24,11 +24,7 @@ export class ListarUsuarioComponent implements OnInit {
   }
 
   ngOnInit() : void {
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      processing: true
-    };
+    
   }
 
 }

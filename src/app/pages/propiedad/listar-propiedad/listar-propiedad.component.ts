@@ -11,7 +11,7 @@ import { Propiedad } from 'app/models/Propiedad';
 export class ListarPropiedadComponent implements OnInit {
 
   propiedades: Propiedad[] = [];
-  dtOptions: DataTables.Settings = {};
+  
 
   constructor(private propiedadService: PropiedadService) { 
     this.propiedadService.getPropiedads().subscribe((data: Propiedad[]) => {
@@ -23,11 +23,7 @@ export class ListarPropiedadComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      processing: true
-    };
+    
   }
 
 }
