@@ -1,13 +1,15 @@
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpXsrfTokenExtractor } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable()
 export class CsrfInterceptor implements HttpInterceptor {
 
+  constructor(private tokenExtractor: HttpXsrfTokenExtractor){}
+
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // Lee el token CSRF de las cookies
-    const csrfToken = this.getCookie('XSRF-TOKEN');
+    const csrfToken = this.tokenExtractor.getToken();
     console.log('Document Cookies: ', document.cookie);
 
     // Si el token CSRF existe, clona la solicitud y establece el encabezado 'X-XSRF-TOKEN'
