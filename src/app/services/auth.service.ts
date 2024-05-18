@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private URL = 'https://back-end-softwareteam.onrender.com';
+  private URL = 'http://localhost:3000';
 
   constructor(private http: HttpClient,
     private jwtHelper: JwtHelperService) { }

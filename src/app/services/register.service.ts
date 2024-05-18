@@ -7,7 +7,7 @@ import { Usuario } from 'app/models/Usuario';
 })
 export class RegisterService {
 
-  BASE_URL = 'https://back-end-softwareteam.onrender.com'
+  BASE_URL = 'http://localhost:3000'
 
   constructor(private http: HttpClient) { }
 

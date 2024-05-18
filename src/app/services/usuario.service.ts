@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-  BASE_URL = 'https://back-end-softwareteam.onrender.com'
+  BASE_URL = 'http://localhost:3000'
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { TipoNeg } from 'app/models/TipoNeg';
 })
 export class TipoNegService {
 
-  BASE_URL = 'https://back-end-softwareteam.onrender.com'
+  BASE_URL = 'http://localhost:3000'
 
   constructor(private http: HttpClient) { }
 
