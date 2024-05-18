@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'app/models/Usuario';
 import { UsuarioService } from 'app/services/usuario.service';
-
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-editar-usuario',
@@ -11,7 +11,7 @@ import { UsuarioService } from 'app/services/usuario.service';
 })
 export class EditarUsuarioComponent implements OnInit {
 
-  id = ''
+  id = '';
   actualizando: boolean = false;
   usuario: Usuario = new Usuario();
 
@@ -36,19 +36,28 @@ export class EditarUsuarioComponent implements OnInit {
   }
 
   guardarUsuario() {
+    const usuarioConEncriptacion = {
+      ...this.usuario,
+      contrasena: this.encryptPassword(this.usuario.contrasena)
+    };
+
     if (this.usuario.id) {
       // Si ya tienes un ID, actualiza el usuario existente
-      this.usuarioService.updateUsuario(this.usuario).subscribe((data) => {
+      this.usuarioService.updateUsuario(usuarioConEncriptacion).subscribe((data) => {
         // Lógica después de la actualización
-        this.router.navigate(['/usuarios'])
+        this.router.navigate(['/usuarios']);
       });
     } else {
       // Si no tienes un ID, agrega un nuevo usuario
-      this.usuarioService.addUsuario(this.usuario).subscribe((data) => {
+      this.usuarioService.addUsuario(usuarioConEncriptacion).subscribe((data) => {
         // Lógica después de agregar el usuario
-        this.router.navigate(['/usuarios'])
+        this.router.navigate(['/usuarios']);
       });
     }
   }
 
+  encryptPassword(password: string): string {
+    const secretKey = 'udec'; // Llave secreta para encriptar
+    return CryptoJS.AES.encrypt(password, secretKey).toString();
+  }
 }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'app/models/Usuario';
-import { UsuarioService } from 'app/services/usuario.service';
-import { Router } from '@angular/router';
 import { RegisterService } from 'app/services/register.service';
+import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +24,13 @@ export class RegisterComponent implements OnInit {
 
   registrarUsuario() {
     this.registrando = true;
-    this.registerService.register(this.usuario).subscribe(
+    const encryptedPassword = this.encryptPassword(this.usuario.contrasena);
+    const usuarioConEncriptacion = {
+      ...this.usuario,
+      contrasena: encryptedPassword
+    };
+
+    this.registerService.register(usuarioConEncriptacion).subscribe(
       (data) => {
         // Registro exitoso, maneja la respuesta aquí si es necesario
         this.registrando = false;
@@ -34,14 +40,17 @@ export class RegisterComponent implements OnInit {
         // Error en el registro, maneja el error aquí si es necesario
         this.registrando = false;
         if (error.status === 400) {
-          // Mensaje personalizado para el error 400
-          this.mostrarNotificacion('Error: el correo ya esta en uso', true);
+          this.mostrarNotificacion('Error: el correo ya está en uso', true);
         } else {
-          // Otro manejo de errores
           this.mostrarNotificacion('Error interno del servidor, por favor contactar con el soporte técnico', true);
         }
       }
     );
+  }
+
+  encryptPassword(password: string): string {
+    const secretKey = 'udec'; 
+    return CryptoJS.AES.encrypt(password, secretKey).toString();
   }
 
   private mostrarNotificacion(mensaje: string, esError: boolean = false) {

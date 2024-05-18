@@ -6,6 +6,7 @@ import { AuthService } from 'app/services/auth.service';
 import { UsuarioService } from 'app/services/usuario.service';
 import { ModalHabilitarMfaComponent } from './modal-habilitar-mfa/modal-habilitar-mfa.component';
 import { ModalDeshabilitarMfaComponent } from './modal-deshabilitar-mfa/modal-deshabilitar-mfa.component';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-profile',
@@ -62,8 +63,11 @@ export class ProfileComponent implements OnInit {
       return;
     }
   
-    // Asignar la nueva contraseña al objeto principal
-    this.datosPerfil.contrasena = this.contrasenas.nueva;
+    // Encriptar la nueva contraseña antes de enviarla al servicio
+    const encryptedPassword = CryptoJS.AES.encrypt(this.contrasenas.nueva, 'udec').toString();
+
+    // Asignar la nueva contraseña encriptada al objeto principal
+    this.datosPerfil.contrasena = encryptedPassword;
   
     // Llamar al servicio para actualizar la contraseña
     this.usuarioService.actualizarContrasena(this.datosPerfil).subscribe(
