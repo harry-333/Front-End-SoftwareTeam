@@ -10,6 +10,7 @@ export class CsrfInterceptor implements HttpInterceptor {
     const csrfToken = this.getCookie('XSRF-TOKEN');
 
     // Si el token CSRF existe, clona la solicitud y establece el encabezado 'X-XSRF-TOKEN'
+    console.log(csrfToken);
     if (csrfToken) {
       req = req.clone({
         headers: req.headers.set('X-XSRF-TOKEN', csrfToken)
