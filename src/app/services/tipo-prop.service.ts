@@ -7,7 +7,7 @@ import { TipoProp } from 'app/models/TipoProp';
 })
 export class TipoPropService {
 
-  BASE_URL = 'http://localhost:3000'
+  BASE_URL = 'https://back-end-softwareteam.onrender.com'
 
   constructor(private http: HttpClient) { }
 
